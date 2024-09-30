@@ -1,3 +1,5 @@
+//  Created by BASHAER ALFEHAID on 26/09/2024.
+
 import SwiftUI
 import AVFoundation
 
@@ -9,7 +11,7 @@ struct bashaer: View {
                 
                 HStack {
                     NavigationLink(destination: PreviousView()) {
-                        //Image(systemName: "chevron.left")
+                      
                         Image(systemName: "arrow.backward")
                             .padding(.bottom, 100)
                             .font(.largeTitle)
