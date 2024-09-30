@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Raneem: View {
     var body: some View {
         ZStack {
             Color.purple.opacity(0.1)
@@ -22,7 +22,7 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity)
                             .cornerRadius(20)
 
-                        Image("Image") // Replace "Image" with your actual image name
+                        Image(.avatar1).resizable().frame(width: 70, height: 70) // Replace "Image" with your actual image name
                     }
                     .padding(45)
 
@@ -89,5 +89,5 @@ struct MenuTabs: View {
 }
 
 #Preview {
-    ContentView()
+    Raneem()
 }

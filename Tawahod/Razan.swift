@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Razan: View {
     let bodyParts = [
         ("قدمي تؤلمني ", "foot"),
         ("بطني يؤلمني", "stomach"),
@@ -75,5 +75,5 @@ struct ContentView: View {
     }
 }
 #Preview {
-    ContentView()
+    Razan()
 }
