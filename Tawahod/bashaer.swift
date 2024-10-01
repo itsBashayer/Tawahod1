@@ -43,16 +43,16 @@ struct bashaer: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 20) // square Starting
                         HStack(spacing: 30) {
-                            SquareButton(imageName: "Image1", soundName: "Sound", cornerRadius: 10, width: 150, height: 150)
-                            SquareButton(imageName: "image2", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "Image1", soundName: "sleep", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image2", soundName: "shower", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareButton(imageName: "image3", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image3", soundName: "bathroom", cornerRadius: 10, width: 150, height: 150)
                             SquareButton(imageName: "image4", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
                             SquareButton(imageName: "image5", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
-                            SquareButton(imageName: "image6", soundName: "sound6", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image6", soundName: "out", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
                     .padding()

@@ -11,7 +11,8 @@ import SwiftUI
 struct TawahodApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          //  ContentView()
+            Food()
         }
     }
 }
