@@ -1,4 +1,3 @@
-
 //  Created by BASHAER ALFEHAID on 26/09/2024.
 
 import SwiftUI
@@ -7,7 +6,7 @@ import AVFoundation
 struct bashaer: View {
     var body: some View {
         
-        NavigationView { //to Home Page
+      
             ZStack {
                 
                 HStack {
@@ -23,17 +22,9 @@ struct bashaer: View {
                         .padding(.bottom, 600)
                         .padding(.leading,-4)
                 }
-                HStack{
-                    NavigationLink(destination: PreviousView()) {
-                        Image(systemName: "arrow.right")
-                            .padding(.bottom, 200)
-                            .font(.largeTitle)
-                            .foregroundColor(.black)
-                            .padding(.leading,290)
-                    }
-                }
-                .padding(.top, 100)
-                .padding(.bottom, 620.0)
+               
+               // .padding(.top, 100)
+               // .padding(.bottom, 620.0)
 
                 ZStack {
                     Rectangle() // Background rectangle
@@ -60,7 +51,7 @@ struct bashaer: View {
                     .padding()
                 }
             }
-        }
+        
     }
 }
 
@@ -101,12 +92,7 @@ struct SquareButton: View {
     }
 }
 
-struct PreviousView: View { //Back to home Page Code
-    var body: some View {
-      Text("Back to home Page")
-            .font(.largeTitle)
-    }
-}
+
 
 #Preview {
     bashaer()
