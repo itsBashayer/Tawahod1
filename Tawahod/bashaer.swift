@@ -1,3 +1,4 @@
+
 //  Created by BASHAER ALFEHAID on 26/09/2024.
 
 import SwiftUI
@@ -10,27 +11,28 @@ struct bashaer: View {
             ZStack {
                 
                 HStack {
-                    NavigationLink(destination: PreviousView()) {
-                      
-                        Image(systemName: "arrow.backward")
-                            .padding(.bottom, 100)
-                            .font(.largeTitle)
-                            .foregroundColor(.black)
-                            .padding(.leading)
-                          
-                    }
-                    
                     Image(systemName: "speaker.wave.2")
                         .font(.title2)
                         .foregroundColor(.black)
-                        .padding(.leading, -100)
                         .rotationEffect(.degrees(180))
-                   
+                        .padding(.bottom, 600)
+                        .padding(.leading ,90)
                     Text("ماذا أحتاج الآن")
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
-                        .padding(.leading, 100)
+                        .padding(.bottom, 600)
+                        .padding(.leading,-4)
                 }
+                HStack{
+                    NavigationLink(destination: PreviousView()) {
+                        Image(systemName: "arrow.right")
+                            .padding(.bottom, 200)
+                            .font(.largeTitle)
+                            .foregroundColor(.black)
+                            .padding(.leading,290)
+                    }
+                }
+                .padding(.top, 100)
                 .padding(.bottom, 620.0)
 
                 ZStack {
@@ -41,18 +43,18 @@ struct bashaer: View {
                         .padding(.top, 150)
                     
                     VStack(spacing: 20) {
-                        Spacer().frame(height: 20) // square Starting
+                        Spacer().frame(height: 50) // square Starting
                         HStack(spacing: 30) {
-                            SquareButton(imageName: "Image1", soundName: "sleep", cornerRadius: 10, width: 150, height: 150)
-                            SquareButton(imageName: "image2", soundName: "shower", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "Image1", soundName: "Sound", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image2", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareButton(imageName: "image3", soundName: "bathroom", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image3", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
                             SquareButton(imageName: "image4", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
                             SquareButton(imageName: "image5", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
-                            SquareButton(imageName: "image6", soundName: "out", cornerRadius: 10, width: 150, height: 150)
+                            SquareButton(imageName: "image6", soundName: "sound6", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
                     .padding()
