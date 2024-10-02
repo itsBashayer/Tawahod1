@@ -30,7 +30,7 @@ struct Famliy: View {
                         .rotationEffect(.degrees(180))
                         .padding(.bottom, 600)
                         .padding(.leading ,90)
-                    Text("ملابس")
+                    Text("العائلة")
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 600)
@@ -50,16 +50,17 @@ struct Famliy: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 50) // square Starting
                         HStack(spacing: 30) {
-                            SquareBttonf(imageName: "pants", soundName: "Sound", cornerRadius: 10, width: 150, height: 150)
-                            SquareBttonf(imageName: "hat", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "father", soundName: "Sound", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "mother", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareBttonf(imageName: "scarf", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
-                            SquareBttonf(imageName: "tshirt", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "brother", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "sister", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
                         }
+                        
                         HStack(spacing: 30) {
-                            SquareBttonf(imageName: "sweater", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
-                            SquareBttonf(imageName: "shoos", soundName: "sound6", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "grandmother", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
+                            SquareBtton(imageName: "grandfather", soundName: "sound6", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
                     .padding()
@@ -83,7 +84,10 @@ struct SquareBttonf: View {
             playSound(soundName: soundName)
         }) {
             Image(imageName)
+            
+                .resizable()
                 .aspectRatio(contentMode: .fill)
+                //.spectRatio(contentMode: .fill)
                 .frame(width: width, height: height)
                 .background(Color.white)
                 .cornerRadius(cornerRadius)
