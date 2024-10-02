@@ -87,7 +87,7 @@ struct tryme2: View {
         case "clothes":
             return AnyView(clothing())
         case "image6":
-            return AnyView(Image6View())
+            return AnyView(Famliy())
         default:
             return AnyView(Text("Unknown View"))
         }
@@ -158,7 +158,7 @@ struct ClothesView: View {
     }
 }
 
-struct Image6View: View {
+struct FamliyView: View {
     var body: some View {
         Text("Image 6 View")
             .font(.largeTitle)
