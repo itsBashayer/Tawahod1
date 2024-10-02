@@ -6,42 +6,45 @@ struct feelingsPage: View {
     var body: some View {
         
         NavigationView { //to Home Page
-            ZStack {
+           
                 
-                HStack {
-                    NavigationLink(destination: FPreviousView()) {
-                        //Image(systemName: "chevron.left")
-                        Image(systemName: "arrow.backward")
-                            .padding(.bottom, 100)
-                            .font(.largeTitle)
-                            .foregroundColor(.black)
-                            .padding(.leading)
-                          
-                    }
-                    
-                    Image(systemName: "speaker.wave.2")
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding(.leading, -100)
-                        .rotationEffect(.degrees(180))
-                   
-                    Text("ماذا أشعر الآن")
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
-                        .padding(.leading, 100)
-                }
-                .padding(.bottom, 620.0)
-
                 ZStack {
-                    Rectangle() // Background rectangle
-                        .fill(Color(red: 0.935, green: 0.97, blue: 0.952))
-                        .frame(width: 450, height: 690)
-                        .cornerRadius(100)
-                        .padding(.top, 150)
                     
-                    VStack(spacing: 20) {
-                        Spacer().frame(height: 20) // square Starting
-                        HStack(spacing: 30) {
+                    HStack {
+                        Image(systemName: "speaker.wave.2")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                            .rotationEffect(.degrees(180))
+                            .padding(.bottom, 600)
+                            .padding(.leading ,90)
+                        Text("ماذا أحتاج الآن")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom, 600)
+                            .padding(.leading,-4)
+                    }
+                    HStack{
+                        NavigationLink(destination: PreviousView()) {
+                            Image(systemName: "arrow.right")
+                                .padding(.bottom, 200)
+                                .font(.largeTitle)
+                                .foregroundColor(.black)
+                                .padding(.leading,290)
+                        }
+                    }
+                    .padding(.top, 100)
+                    .padding(.bottom, 620.0)
+
+                    ZStack {
+                        Rectangle() // Background rectangle
+                            .fill(Color(red: 0.935, green: 0.97, blue: 0.948))
+                            .frame(width: 450, height: 690)
+                            .cornerRadius(100)
+                            .padding(.top, 150)
+                        
+                        VStack(spacing: 20) {
+                            Spacer().frame(height: 50) // square Starting
+                            HStack(spacing: 30) {
                             FSquareButton(imageName: "ImageF1", soundName: "SoundF1", cornerRadius: 10, width: 150, height: 150)
                             FSquareButton(imageName: "ImageF2", soundName: "soundF2", cornerRadius: 10, width: 150, height: 150)
                         }
