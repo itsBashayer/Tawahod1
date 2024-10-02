@@ -8,7 +8,7 @@ struct tryme2: View {
         ("needs", "ماذا احتاج الان", "sound3", Color.lightGreen),
         ("food", "الطعام", "sound4", Color.lightYellow),
         ("clothes", "الملابس", "sound5", Color.lightPurple),
-        ("image6", "Image 6", "sound6", Color.lightPink)
+        ("famliy", "العائلة", "sound6", Color.lightPink)
     ]
     
     @State private var searchText = ""
@@ -85,9 +85,9 @@ struct tryme2: View {
         case "food":
             return AnyView(Food())
         case "clothes":
-            return AnyView(ClothesView())
+            return AnyView(clothing())
         case "image6":
-            return AnyView(Image6View())
+            return AnyView(Famliy())
         default:
             return AnyView(Text("Unknown View"))
         }
@@ -158,7 +158,7 @@ struct ClothesView: View {
     }
 }
 
-struct Image6View: View {
+struct FamliyView: View {
     var body: some View {
         Text("Image 6 View")
             .font(.largeTitle)
