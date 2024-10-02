@@ -85,7 +85,7 @@ struct tryme2: View {
         case "food":
             return AnyView(Food())
         case "clothes":
-            return AnyView(ClothesView())
+            return AnyView(clothing())
         case "image6":
             return AnyView(Image6View())
         default:
