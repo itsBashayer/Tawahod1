@@ -24,7 +24,7 @@ struct Raneem: View {
 
                         Image(.avatar1).resizable().frame(width: 70, height: 70) // Replace "Image" with your actual image name
                     }
-                    .padding(45)
+                    .padding(5)
 
                     ZStack {
                         RoundedRectangle(cornerRadius: 90)
