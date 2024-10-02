@@ -46,7 +46,7 @@ struct tryme4: View {
                 .padding(.horizontal, 30)
                 
                 // Search Bar
-                SearchBar(text: $searchText)
+                SsearchBar(text: $searchText)
                     .padding()
 
                 Spacer()
