@@ -17,7 +17,7 @@ struct feelingsPage: View {
                         .padding(.leading, -100)
                         .rotationEffect(.degrees(180))
                    
-                    Text("ماذا أحتاج الآن")
+                    Text("ماذا أشعر الآن")
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .padding(.leading, 100)

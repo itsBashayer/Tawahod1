@@ -24,10 +24,6 @@ struct Food: View {
         ("Food6", "Sound"),
 
         
-        
-        
-        
-        
     ]
     @State private var selectedButton: String = "Sound"  // State variable for selected avatar
     var body: some View {
