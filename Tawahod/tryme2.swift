@@ -79,7 +79,7 @@ struct tryme2: View {
         case "feelings":
             return AnyView(Raneem())
         case "hurt":
-            return AnyView(Razan())
+            return AnyView(PPage())
         case "needs":
             return AnyView(bashaer())
         case "food":
