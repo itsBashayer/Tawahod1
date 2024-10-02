@@ -21,7 +21,7 @@ struct tryme2: View {
                 }
                 
                 ZStack(alignment: .bottomTrailing) {
-                    NavigationLink(destination: RaneemView()) {
+                    NavigationLink(destination: Raneem()) {
                         Image("avatar7")
                             .resizable()
                             .frame(width: 50, height: 50)
@@ -77,13 +77,13 @@ struct tryme2: View {
     private func destinationView(for option: String) -> some View {
         switch option {
         case "feelings":
-            return AnyView(Raneem())
+            return AnyView(feelingsPage())
         case "hurt":
             return AnyView(PPage())
         case "needs":
             return AnyView(bashaer())
         case "food":
-            return AnyView(FoodView())
+            return AnyView(Food())
         case "clothes":
             return AnyView(ClothesView())
         case "image6":
