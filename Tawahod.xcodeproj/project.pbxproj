@@ -6,11 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		DC6E495F2CACBB38002C85CF /* tryme4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E495E2CACBB38002C85CF /* tryme4.swift */; };
-		DC6E49612CAD3071002C85CF /* tryme3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E49602CAD3071002C85CF /* tryme3.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		F986F7402CA85009000532BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,8 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC6E495E2CACBB38002C85CF /* tryme4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tryme4.swift; sourceTree = "<group>"; };
-		DC6E49602CAD3071002C85CF /* tryme3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tryme3.swift; sourceTree = "<group>"; };
 		F986F72F2CA85008000532BB /* Tawahod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tawahod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F986F73F2CA85009000532BB /* TawahodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TawahodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F986F7492CA85009000532BB /* TawahodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TawahodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +75,6 @@
 		F986F7262CA85008000532BB = {
 			isa = PBXGroup;
 			children = (
-				DC6E49602CAD3071002C85CF /* tryme3.swift */,
-				DC6E495E2CACBB38002C85CF /* tryme4.swift */,
 				F986F7312CA85008000532BB /* Tawahod */,
 				F986F7422CA85009000532BB /* TawahodTests */,
 				F986F74C2CA85009000532BB /* TawahodUITests */,
@@ -245,8 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6E495F2CACBB38002C85CF /* tryme4.swift in Sources */,
-				DC6E49612CAD3071002C85CF /* tryme3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
