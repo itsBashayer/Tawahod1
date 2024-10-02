@@ -8,7 +8,7 @@ struct tryme2: View {
         ("needs", "ماذا احتاج الان", "sound3", Color.lightGreen),
         ("food", "الطعام", "sound4", Color.lightYellow),
         ("clothes", "الملابس", "sound5", Color.lightPurple),
-        ("image6", "Image 6", "sound6", Color.lightPink)
+        ("famliy", "العائلة", "sound6", Color.lightPink)
     ]
     
     @State private var searchText = ""
