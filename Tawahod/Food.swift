@@ -11,12 +11,12 @@ import SwiftUI
 
 struct Food: View {
     let items: [(imageName: String, Sound: String)] = [
-        ("Food1", "out"),
+        ("Food1", "rice1"),
         ("Food2", "out"),
         ("Food3", "out"),
         ("Food4", "sleep"),
         ("Food5", "bathroom"),
-        ("Food6", "shower"),
+        ("Food6", "pizza"),
         ("Food2", "Sound"),
         ("Food3", "Sound"),
         ("Food4", "Sound"),

@@ -42,16 +42,16 @@ struct PPage: View {
                         VStack(spacing: 20) {
                             Spacer().frame(height: 50) // square Starting
                             HStack(spacing: 30) {
-                                FSquarButton(imageName: "stomach", soundName: "SoundP1", cornerRadius: 10, width: 150, height: 150)
-                                FSquarButton(imageName: "tooth", soundName: "SoundP2", cornerRadius: 10, width: 150, height: 150)
+                                FSquarButton(imageName: "stomach", soundName: "b", cornerRadius: 10, width: 150, height: 150)
+                                FSquarButton(imageName: "tooth", soundName: "teeth_hurt", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            FSquarButton(imageName: "foot", soundName: "SoundP3", cornerRadius: 10, width: 150, height: 150)
-                            FSquarButton(imageName: "head", soundName: "SoundP4", cornerRadius: 10, width: 150, height: 150)
+                            FSquarButton(imageName: "foot", soundName: "feetـhurt2", cornerRadius: 10, width: 150, height: 150)
+                            FSquarButton(imageName: "head", soundName: "head", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            FSquarButton(imageName: "back", soundName: "SoundP5", cornerRadius: 10, width: 150, height: 150)
-                            FSquarButton(imageName: "arm", soundName: "SoundP6", cornerRadius: 10, width: 150, height: 150)
+                            FSquarButton(imageName: "back", soundName: "back_hurts", cornerRadius: 10, width: 150, height: 150)
+                            FSquarButton(imageName: "arm", soundName: "arm", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
                     .padding()
