@@ -47,7 +47,7 @@ struct clothing: View {
                             SquareBtton(imageName: "hat", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareBtton(imageName: "scarf", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
+                            SquareBtton(imageName: "scarf", soundName: "sc", cornerRadius: 10, width: 150, height: 150)
                             SquareBtton(imageName: "tshirt", soundName: "shirt", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {

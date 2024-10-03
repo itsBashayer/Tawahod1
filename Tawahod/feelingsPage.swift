@@ -34,7 +34,7 @@ struct feelingsPage: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 20) // square Starting
                         HStack(spacing: 30) {
-                            FSquareButton(imageName: "ImageF1", soundName: "SoundF1", cornerRadius: 10, width: 150, height: 150)
+                            FSquareButton(imageName: "ImageF1", soundName: "happy", cornerRadius: 10, width: 150, height: 150)
                             FSquareButton(imageName: "ImageF2", soundName: "sad", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
