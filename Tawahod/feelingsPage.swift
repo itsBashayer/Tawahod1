@@ -35,15 +35,15 @@ struct feelingsPage: View {
                         Spacer().frame(height: 20) // square Starting
                         HStack(spacing: 30) {
                             FSquareButton(imageName: "ImageF1", soundName: "SoundF1", cornerRadius: 10, width: 150, height: 150)
-                            FSquareButton(imageName: "ImageF2", soundName: "soundF2", cornerRadius: 10, width: 150, height: 150)
+                            FSquareButton(imageName: "ImageF2", soundName: "sad", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
                             FSquareButton(imageName: "ImageF3", soundName: "soundF3", cornerRadius: 10, width: 150, height: 150)
-                            FSquareButton(imageName: "ImageF4", soundName: "soundF4", cornerRadius: 10, width: 150, height: 150)
+                            FSquareButton(imageName: "ImageF4", soundName: "cr", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
                             FSquareButton(imageName: "ImageF5", soundName: "soundF5", cornerRadius: 10, width: 150, height: 150)
-                            FSquareButton(imageName: "ImageF6", soundName: "soundF6", cornerRadius: 10, width: 150, height: 150)
+                            FSquareButton(imageName: "ImageF6", soundName: "ho", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
                     .padding()
