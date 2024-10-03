@@ -57,11 +57,12 @@ struct Famliy: View {
                             SquareBttonf(imageName: "brother", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
                             SquareBttonf(imageName: "sister", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
                         }
-                        
                         HStack(spacing: 30) {
-                            SquareBttonf(imageName: "grandmother", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
-                            SquareBtton(imageName: "grandfather", soundName: "sound6", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "grandmother", soundName: "sound3", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "grandfather", soundName: "sound4", cornerRadius: 10, width: 150, height: 150)
                         }
+                        
+                  
                     }
                     .padding()
                 }
