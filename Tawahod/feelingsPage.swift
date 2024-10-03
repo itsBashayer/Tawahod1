@@ -42,7 +42,7 @@ struct feelingsPage: View {
                             FSquareButton(imageName: "ImageF4", soundName: "cr", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            FSquareButton(imageName: "ImageF5", soundName: "soundF5", cornerRadius: 10, width: 150, height: 150)
+                            FSquareButton(imageName: "ImageF7", soundName: "soundF5", cornerRadius: 10, width: 150, height: 150)
                             FSquareButton(imageName: "ImageF6", soundName: "ho", cornerRadius: 10, width: 150, height: 150)
                         }
                     }
