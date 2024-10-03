@@ -16,7 +16,7 @@ struct Raneem: View {
             HStack {
                 VStack {
                     HStack(spacing: -50) {
-                        Text("مرحبًا علي!")
+                        Text("مرحبًا!")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity)

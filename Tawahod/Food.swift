@@ -11,17 +11,18 @@ import SwiftUI
 
 struct Food: View {
     let items: [(imageName: String, Sound: String)] = [
-        ("Food1", "out"),
-        ("Food2", "out"),
-        ("Food3", "out"),
+        ("Food1", "rice1"),
+        ("Food2", "eg"),
+        ("Food3", "coki"),
         ("Food4", "sleep"),
-        ("Food5", "bathroom"),
-        ("Food6", "shower"),
-        ("Food2", "Sound"),
-        ("Food3", "Sound"),
-        ("Food4", "Sound"),
-        ("Food5", "Sound"),
-        ("Food6", "Sound"),
+        ("Food5", "salad"),
+        ("Food6", "pizza"),
+        ("Food1", "rice1"),
+        ("Food2", "eg"),
+        ("Food3", "coki"),
+        ("Food4", "sleep"),
+        ("Food5", "salad"),
+        ("Food6", "pizza"),
 
         
     ]
