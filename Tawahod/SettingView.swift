@@ -1,13 +1,8 @@
-//
-//  ContentView.swift
-//  newtwst
-//
-//  Created by Raneem on 26/03/1446 AH.
-//
-
 import SwiftUI
 
 struct SettingView: View {
+    var selectedAvatar: String
+    
     var body: some View {
         ZStack {
             Color.purple.opacity(0.1)
@@ -22,7 +17,7 @@ struct SettingView: View {
                             .frame(maxWidth: .infinity)
                             .cornerRadius(20)
 
-                        Image(.avatar1).resizable().frame(width: 70, height: 70) // Replace "Image" with your actual image name
+                        Image(selectedAvatar).resizable().frame(width: 70, height: 70) // Replace "Image" with your actual image name
                     }
                     .padding(5)
 
@@ -89,5 +84,5 @@ struct MenuTabs: View {
 }
 
 #Preview {
-    SettingView()
+    SettingView(selectedAvatar: "avatar3")
 }

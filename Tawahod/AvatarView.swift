@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Tawahod
-//
-//  Created by Mona on 25/03/1446 AH.
-//
-
 import SwiftUI
 
 struct AvatarView: View {
@@ -29,46 +22,55 @@ struct AvatarView: View {
         ("avatar1", Color.lightGreen),
     ]
 
-    @State private var selectedAvatar: String = "avatar3"  // State variable for selected avatar
+    @State private var localSelectedAvatar: String = "avatar3"
 
     var body: some View {
-        VStack {
-            ZStack {
-                Circle().foregroundColor(Color.lightGrey)
-                    .frame(width: 150, height: 150)
-                Image(selectedAvatar).resizable()
-                    .scaledToFit()  // Maintain aspect ratio
-                    .frame(width: 120, height: 120)
-            }
-
-            Text("اختر شخصيتك!")
-                .foregroundColor(Color.darkGrey)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
-
-            ScrollView {
-                LazyVGrid(
-                    columns: [GridItem(.adaptive(minimum: 90))], spacing: 10
-                ) {
-                    ForEach(Array(items.enumerated()), id: \.offset) {
-                        index, item in
-                        AvatarFrame(
-                            avatarImg: item.imageName,
-                            frameColor: item.frameColor
-                        )
-                        .onTapGesture {
-                            selectedAvatar = item.imageName
-                        }
-                    }  //Use id: \.offset: This uses the index (offset) as the identifier, ensuring that each item is unique even if the image names are the same.
-
+        NavigationView {
+            VStack {
+                ZStack {
+                    Circle().foregroundColor(Color.lightGrey)
+                        .frame(width: 150, height: 150)
+                    Image(localSelectedAvatar)  // Use the local state variable for the displayed image
+                        .resizable()
+                        .scaledToFit()  // Maintain aspect ratio
+                        .frame(width: 120, height: 120)
                 }
-                .padding(30)
+
+                Text("اختر شخصيتك!")
+                    .foregroundColor(Color.darkGrey)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+
+                ScrollView {
+                    LazyVGrid(
+                        columns: [GridItem(.adaptive(minimum: 90))], spacing: 10
+                    ) {
+                        ForEach(Array(items.enumerated()), id: \.offset) {
+                            index, item in
+                            AvatarFrame(
+                                avatarImg: item.imageName,
+                                frameColor: item.frameColor
+                            )
+                            .onTapGesture {
+                                localSelectedAvatar = item.imageName
+                            }
+                        }
+                    }
+                    .padding(30)
+                }
+
+                NavigationLink(destination: MainView(selectedAvatar: localSelectedAvatar)) {
+                    Text("Continue")  // Provide a label for the link
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.top)  // Optional: Add some padding above the link
             }
-
+            .padding(.top, 20)
         }
-        .padding(.top, 20)
-
     }
 }
 

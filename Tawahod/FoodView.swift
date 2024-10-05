@@ -1,11 +1,3 @@
-//
-//  Food.swift
-//  Tawahod
-//
-//  Created by Raneem on 27/03/1446 AH.
-//
-//  Created by BASHAER ALFEHAID on 26/09/2024.
-
 import AVFoundation
 import SwiftUI
 
@@ -24,7 +16,6 @@ struct FoodView: View {
         ("Food5", "salad"),
         ("Food6", "pizza"),
 
-        
     ]
     @State private var selectedButton: String = "Sound"  // State variable for selected avatar
     var body: some View {
@@ -60,7 +51,7 @@ struct FoodView: View {
                                 soundName: item.Sound
                             )
                             .onTapGesture {
-                                 selectedButton = item.Sound
+                                selectedButton = item.Sound
                             }
                         }
 
@@ -92,22 +83,6 @@ struct SquareButton1: View {
         }
     }
 
-    private func playSound(soundName: String) {
-        guard
-            let url = Bundle.main.url(
-                forResource: soundName, withExtension: "mp3")
-        else {
-            print("Audio file not found: \(soundName)")
-            return
-        }
-
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        } catch {
-            print("Error playing sound: \(error)")
-        }
-    }
 }
 
 struct PreviousView1: View {  //Back to home Page Code
