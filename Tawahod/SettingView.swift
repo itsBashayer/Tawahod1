@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Raneem: View {
+struct SettingView: View {
     var body: some View {
         ZStack {
             Color.purple.opacity(0.1)
@@ -89,5 +89,5 @@ struct MenuTabs: View {
 }
 
 #Preview {
-    Raneem()
+    SettingView()
 }

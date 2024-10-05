@@ -1,16 +1,7 @@
-//
-//  clothing.swift
-//  Tawahod
-//
-//  Created by Razan on 29/03/1446 AH.
-//
-
-//  Created by BASHAER ALFEHAID on 26/09/2024.
-
 import SwiftUI
 import AVFoundation
 
-struct clothing: View {
+struct FamliyView: View {
     var body: some View {
         
       
@@ -23,7 +14,7 @@ struct clothing: View {
                         .rotationEffect(.degrees(180))
                         .padding(.bottom, 600)
                         .padding(.leading ,90)
-                    Text("ملابس")
+                    Text("العائلة")
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 600)
@@ -43,17 +34,19 @@ struct clothing: View {
                     VStack(spacing: 20) {
                         Spacer().frame(height: 50) // square Starting
                         HStack(spacing: 30) {
-                            SquareBtton(imageName: "pants", soundName: "Sound", cornerRadius: 10, width: 150, height: 150)
-                            SquareBtton(imageName: "hat", soundName: "sound2", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "father", soundName: "Dad", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "mother", soundName: "mother", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareBtton(imageName: "scarf", soundName: "sc", cornerRadius: 10, width: 150, height: 150)
-                            SquareBtton(imageName: "tshirt", soundName: "shirt", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "brother", soundName: "brother", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "sister", soundName: "sis", cornerRadius: 10, width: 150, height: 150)
                         }
                         HStack(spacing: 30) {
-                            SquareBtton(imageName: "sweater", soundName: "sound5", cornerRadius: 10, width: 150, height: 150)
-                            SquareBtton(imageName: "shoos", soundName: "shose", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "grandmother", soundName: "grandmother", cornerRadius: 10, width: 150, height: 150)
+                            SquareBttonf(imageName: "grandfather", soundName: "grandfather", cornerRadius: 10, width: 150, height: 150)
                         }
+                        
+                  
                     }
                     .padding()
                 }
@@ -62,7 +55,7 @@ struct clothing: View {
     }
 }
 
-struct SquareBtton: View {
+struct SquareBttonf: View {
     var imageName: String
     var soundName: String
     var cornerRadius: CGFloat
@@ -76,7 +69,10 @@ struct SquareBtton: View {
             playSound(soundName: soundName)
         }) {
             Image(imageName)
+            
+                .resizable()
                 .aspectRatio(contentMode: .fill)
+                //.spectRatio(contentMode: .fill)
                 .frame(width: width, height: height)
                 .background(Color.white)
                 .cornerRadius(cornerRadius)
@@ -102,6 +98,7 @@ struct SquareBtton: View {
 
 
 #Preview {
-    clothing()
+    FamliyView()
 }
+
 

@@ -2,7 +2,7 @@
 import SwiftUI
 import AVFoundation
 
-struct feelingsPage: View {
+struct FeelingsView: View {
     var body: some View {
         
      
@@ -93,7 +93,7 @@ struct FSquareButton: View {
 
 
 #Preview {
-    feelingsPage()
+    FeelingsView()
 }
 
 

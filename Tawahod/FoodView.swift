@@ -9,20 +9,22 @@
 import AVFoundation
 import SwiftUI
 
-struct foodpage: View {
+struct FoodView: View {
     let items: [(imageName: String, Sound: String)] = [
-        ("Food1", "out"),
-        ("Food2", "out"),
-        ("Food3", "out"),
+        ("Food1", "rice1"),
+        ("Food2", "eg"),
+        ("Food3", "coki"),
         ("Food4", "sleep"),
-        ("Food5", "bathroom"),
-        ("Food6", "shower"),
-        ("Food2", "Sound"),
-        ("Food3", "Sound"),
-        ("Food4", "Sound"),
-        ("Food5", "Sound"),
-        ("Food6", "Sound"),
+        ("Food5", "salad"),
+        ("Food6", "pizza"),
+        ("Food1", "rice1"),
+        ("Food2", "eg"),
+        ("Food3", "coki"),
+        ("Food4", "sleep"),
+        ("Food5", "salad"),
+        ("Food6", "pizza"),
 
+        
     ]
     @State private var selectedButton: String = "Sound"  // State variable for selected avatar
     var body: some View {
@@ -71,7 +73,7 @@ struct foodpage: View {
     }
 }
 
-struct SquareButton3: View {
+struct SquareButton1: View {
     var imageName: String
     var soundName: String
 
@@ -86,7 +88,7 @@ struct SquareButton3: View {
                 .frame(width: 150, height: 150)
                 .background(Color.white)
                 .cornerRadius(10)
-             //   .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                .shadow(color: .gray, radius: 5, x: 0, y: 2)
         }
     }
 
@@ -108,7 +110,7 @@ struct SquareButton3: View {
     }
 }
 
-struct PreviousView3: View {  //Back to home Page Code
+struct PreviousView1: View {  //Back to home Page Code
     var body: some View {
         Text("Back to home Page")
             .font(.largeTitle)
@@ -116,5 +118,5 @@ struct PreviousView3: View {  //Back to home Page Code
 }
 
 #Preview {
-    foodpage()
+    FoodView()
 }

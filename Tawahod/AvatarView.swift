@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AvatarView: View {
     let items: [(imageName: String, frameColor: Color)] = [
         ("avatar1", Color.lightYellow),
         ("avatar2", Color.lightGreen),
@@ -88,5 +88,5 @@ struct AvatarFrame: View {
 }
 
 #Preview {
-    ContentView()
+    AvatarView()
 }

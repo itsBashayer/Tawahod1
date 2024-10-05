@@ -1,16 +1,16 @@
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
-struct tryme2: View {
+struct MainView: View {
     let options = [
         ("feelings", "المشاعر", "sound1", Color.lightPink),
         ("hurt", "ماذا يؤلمني", "sound2", Color.lightPurple),
         ("needs", "ماذا احتاج الان", "sound3", Color.lightGreen),
         ("food", "الطعام", "sound4", Color.lightYellow),
         ("clothes", "الملابس", "sound5", Color.lightPurple),
-        ("famliy", "العائلة", "sound6", Color.lightPink)
+        ("famliy", "العائلة", "sound6", Color.lightPink),
     ]
-    
+
     @State private var searchText = ""
 
     var body: some View {
@@ -19,22 +19,22 @@ struct tryme2: View {
                 HStack {
                     Spacer()
                 }
-                
+
                 ZStack(alignment: .bottomTrailing) {
-                    NavigationLink(destination: Raneem()) {
+                    NavigationLink(destination: SettingView()) {
                         Image("avatar7")
                             .resizable()
                             .frame(width: 50, height: 50)
                             .background(Color.lightGrey)
                             .cornerRadius(50)
                     }
-                    
+
                     Image("profileLine")
                         .resizable()
                         .frame(width: 15, height: 15)
                 }
                 .padding(.horizontal, 30)
-                
+
                 // Search bar without filtering logic
                 SsearchBar(text: $searchText)
                     .padding()
@@ -44,22 +44,28 @@ struct tryme2: View {
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                     .padding(.trailing, 40)
-                
+
                 // Display all options without filtering
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2), spacing: 40) {
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(.flexible(), spacing: 10), count: 2),
+                    spacing: 40
+                ) {
                     ForEach(options, id: \.0) { option in
-                        NavigationLink(destination: destinationView(for: option.0)) {
+                        NavigationLink(
+                            destination: destinationView(for: option.0)
+                        ) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(option.3)
                                     .frame(width: 150, height: 150)
-                                
+
                                 Image(option.0)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 90, height: 90)
                                     .padding(.top, -30)
-                                
+
                                 Text(option.1)
                                     .fontWeight(.bold)
                                     .padding(.top, 110)
@@ -73,45 +79,31 @@ struct tryme2: View {
             .padding(.top, -20)
         }
     }
-    
+
     private func destinationView(for option: String) -> some View {
         switch option {
         case "feelings":
-            return AnyView(feelingsPage())
+            return AnyView(FeelingsView())
         case "hurt":
-            return AnyView(PPage())
+            return AnyView(HurtView())
         case "needs":
-            return AnyView(bashaer())
+            return AnyView(NeedsView())
         case "food":
-            return AnyView(Food())
+            return AnyView(FoodView())
         case "clothes":
-            return AnyView(clothing())
-        case "image6":
-            return AnyView(Famliy())
+            return AnyView(ClothingView())
+        case "famliy":
+            return AnyView(FamliyView())
         default:
             return AnyView(Text("Unknown View"))
         }
     }
-    
-    private func playSound(soundName: String) {
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
-            print("Audio file not found: \(soundName)")
-            return
-        }
-        
-        do {
-            let audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.play()
-        } catch {
-            print("Error playing sound: \(error)")
-        }
-    }
-    
+
 }
 
 struct SsearchBar: View {
     @Binding var text: String
-    
+
     var body: some View {
         HStack {
             TextField("Search...", text: $text)
@@ -123,28 +115,28 @@ struct SsearchBar: View {
 }
 
 // Placeholder views for navigation links
-struct RaneemView: View {
+/*struct RaneemView: View {
     var body: some View {
         Text("Raneem View")
             .font(.largeTitle)
     }
 }
 
-struct HurtView: View {
+struct Hurt: View {
     var body: some View {
         Text("Hurt View")
             .font(.largeTitle)
     }
 }
 
-struct NeedsView: View {
+struct NeedView: View {
     var body: some View {
         Text("Needs View")
             .font(.largeTitle)
     }
 }
 
-struct FoodView: View {
+struct Food: View {
     var body: some View {
         Text("Food View")
             .font(.largeTitle)
@@ -158,13 +150,13 @@ struct ClothesView: View {
     }
 }
 
-struct FamliyView: View {
+struct Famliy: View {
     var body: some View {
         Text("Image 6 View")
             .font(.largeTitle)
     }
-}
+}*/
 
 #Preview {
-    tryme2()
+    MainView()
 }
