@@ -2,6 +2,7 @@ import AVFoundation
 import SwiftUI
 
 struct MainView: View {
+    var selectedAvatar: String
     let options = [
         ("feelings", "المشاعر", "sound1", Color.lightPink),
         ("hurt", "ماذا يؤلمني", "sound2", Color.lightPurple),
@@ -21,8 +22,8 @@ struct MainView: View {
                 }
 
                 ZStack(alignment: .bottomTrailing) {
-                    NavigationLink(destination: SettingView()) {
-                        Image("avatar7")
+                    NavigationLink(destination: SettingView(selectedAvatar: selectedAvatar)) {
+                        Image(selectedAvatar)
                             .resizable()
                             .frame(width: 50, height: 50)
                             .background(Color.lightGrey)
@@ -77,7 +78,7 @@ struct MainView: View {
                 .padding()
             }
             .padding(.top, -20)
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 
     private func destinationView(for option: String) -> some View {
@@ -158,5 +159,5 @@ struct Famliy: View {
 }*/
 
 #Preview {
-    MainView()
+    MainView(selectedAvatar: "avatar3")
 }

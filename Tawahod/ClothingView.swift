@@ -1,16 +1,7 @@
-//
-//  clothing.swift
-//  Tawahod
-//
-//  Created by Razan on 29/03/1446 AH.
-//
-
-//  Created by BASHAER ALFEHAID on 26/09/2024.
-
 import AVFoundation
 import SwiftUI
 
-struct clothingView: View {
+struct ClothingView: View {
     var body: some View {
 
         ZStack {
@@ -94,5 +85,5 @@ struct SquareBtton: View {
 }
 
 #Preview {
-    clothingView()
+    ClothingView()
 }
