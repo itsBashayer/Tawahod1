@@ -16,50 +16,45 @@ struct MainView: View {
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .trailing) {
-                HStack {
-                    Spacer()
-                }
-
-                ZStack(alignment: .bottomTrailing) {
-                    NavigationLink(destination: SettingView(selectedAvatar: selectedAvatar)) {
+            VStack (alignment: .leading){
+                HStack(alignment: .bottom) {
+                    NavigationLink(
+                        destination: SettingView(selectedAvatar: selectedAvatar)
+                    ) {
                         Image(selectedAvatar)
                             .resizable()
                             .frame(width: 50, height: 50)
-                            .background(Color.lightGrey)
+                            .padding(5)
+                            .background(Color.lightYellow)
                             .cornerRadius(50)
                     }
+                    Spacer()
 
-                    Image("profileLine")
-                        .resizable()
-                        .frame(width: 15, height: 15)
+                    Text("أهلاً منى!")
+                        .font(.title2)
+                        .fontWeight(.semibold)
                 }
-                .padding(.horizontal, 30)
 
-                // Search bar without filtering logic
-                SsearchBar(text: $searchText)
-                    .padding()
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("ابحث...", text: $searchText).multilineTextAlignment(.trailing)
+                }
+                .padding()
+                .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.lightGrey, lineWidth: 1))
 
-                Spacer()
-                Text("اختر ماذا تريد ")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding(.trailing, 40)
-
-                // Display all options without filtering
                 LazyVGrid(
                     columns: Array(
-                        repeating: GridItem(.flexible(), spacing: 10), count: 2),
-                    spacing: 40
+                        repeating: GridItem(.flexible()), count: 2),
+                    spacing: 10
                 ) {
                     ForEach(options, id: \.0) { option in
                         NavigationLink(
                             destination: destinationView(for: option.0)
                         ) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 10)
+                                RoundedRectangle(cornerRadius: 20)
                                     .fill(option.3)
-                                    .frame(width: 150, height: 150)
+                                    .frame(width: 170, height: 160)
 
                                 Image(option.0)
                                     .resizable()
@@ -74,10 +69,12 @@ struct MainView: View {
                             }
                         }
                     }
-                }
-                .padding()
+                }.padding(.top, 20)
+                
             }
-            .padding(.top, -20)
+            .padding(.horizontal, 25)
+            
+                .frame(maxHeight: .infinity, alignment: .top)
         }.navigationBarBackButtonHidden(true)
     }
 
@@ -101,62 +98,6 @@ struct MainView: View {
     }
 
 }
-
-struct SsearchBar: View {
-    @Binding var text: String
-
-    var body: some View {
-        HStack {
-            TextField("Search...", text: $text)
-                .padding(9)
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
-        }
-    }
-}
-
-// Placeholder views for navigation links
-/*struct RaneemView: View {
-    var body: some View {
-        Text("Raneem View")
-            .font(.largeTitle)
-    }
-}
-
-struct Hurt: View {
-    var body: some View {
-        Text("Hurt View")
-            .font(.largeTitle)
-    }
-}
-
-struct NeedView: View {
-    var body: some View {
-        Text("Needs View")
-            .font(.largeTitle)
-    }
-}
-
-struct Food: View {
-    var body: some View {
-        Text("Food View")
-            .font(.largeTitle)
-    }
-}
-
-struct ClothesView: View {
-    var body: some View {
-        Text("Clothes View")
-            .font(.largeTitle)
-    }
-}
-
-struct Famliy: View {
-    var body: some View {
-        Text("Image 6 View")
-            .font(.largeTitle)
-    }
-}*/
 
 #Preview {
     MainView(selectedAvatar: "avatar3")
