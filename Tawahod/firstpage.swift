@@ -27,6 +27,7 @@ struct firstpage: View {
                     }
                     withAnimation(.easeOut(duration: 1).delay(1)) {
                         scale = 1
+                      //  MainView(selectedAvatar: "")
                     }
                     // Delay for showing the text
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
