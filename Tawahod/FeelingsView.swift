@@ -13,8 +13,8 @@ struct FeelingsView: View {
 
                 Text("ماذا أشعر الآن")
                     .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding(.leading, 100)
+                    .fontWeight(.semibold)
+                    .padding(.leading, 130)
             }
             .padding(.bottom, 620.0)
 
