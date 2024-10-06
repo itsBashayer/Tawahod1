@@ -4,11 +4,10 @@
 //
 //  Created by Razan on 03/04/1446 AH.
 //
-
 import AVFoundation
 import SwiftUI
 
-struct food2View {
+struct food2: View {
     var body: some View {
 
         ZStack {
@@ -28,7 +27,7 @@ struct food2View {
 
             ZStack {
                 Rectangle()  // Background rectangle
-                    .fill(Color(red: 0.963, green: 0.953, blue: 0.996))
+                    .fill(Color(red: 1.002, green: 0.898, blue: 0.9))
                     .frame(width: 450, height: 690)
                     .cornerRadius(100)
                     .padding(.top, 150)
@@ -37,29 +36,28 @@ struct food2View {
                     Spacer().frame(height: 50)  // square Starting
                     HStack(spacing: 30) {
                         SquareBttong(
-                            imageName: "father", soundName: "Dad",
+                            imageName: "Food1", soundName: "rice1",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBttong(
-                            imageName: "mother", soundName: "mother",
+                            imageName: "Food2", soundName: "eg",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                     HStack(spacing: 30) {
                         SquareBttong(
-                            imageName: "brother", soundName: "brother",
+                            imageName: "Food3", soundName: "coki",
                             cornerRadius: 10, width: 150, height: 150)
-                        SquareBttong(
-                            imageName: "sister", soundName: "sis",
+                        SquareBtton(
+                            imageName: "Food4", soundName: "",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                     HStack(spacing: 30) {
                         SquareBttong(
-                            imageName: "grandmother", soundName: "grandmother",
+                            imageName: "Food5", soundName: "salad",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBttong(
-                            imageName: "grandfather", soundName: "grandfather",
+                            imageName: "Food6", soundName: "pizza",
                             cornerRadius: 10, width: 150, height: 150)
                     }
-
                 }
                 .padding()
             }
@@ -82,18 +80,17 @@ struct SquareBttong: View {
             playSound(soundName: soundName)
         }) {
             Image(imageName)
-
-                .resizable()
                 .aspectRatio(contentMode: .fill)
-                //.spectRatio(contentMode: .fill)
                 .frame(width: width, height: height)
                 .background(Color.white)
                 .cornerRadius(cornerRadius)
                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
         }
     }
+
 }
 
 #Preview {
-    food2View()
+    food2()
 }
+
