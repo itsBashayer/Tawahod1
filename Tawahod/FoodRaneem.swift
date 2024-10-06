@@ -1,7 +1,7 @@
 import AVFoundation
 import SwiftUI
 
-struct FoodView: View {
+struct FoodRaneem: View {
     let items: [(imageName: String, Sound: String)] = [
         ("Food1", "rice1"),
         ("Food2", "eg"),
@@ -93,5 +93,5 @@ struct PreviousView1: View {  //Back to home Page Code
 }
 
 #Preview {
-    FoodView()
+    FoodRaneem()
 }

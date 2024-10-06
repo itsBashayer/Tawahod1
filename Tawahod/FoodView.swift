@@ -7,7 +7,7 @@
 import AVFoundation
 import SwiftUI
 
-struct food2: View {
+struct FoodView: View {
     var body: some View {
 
         ZStack {
@@ -91,6 +91,6 @@ struct SquareBttong: View {
 }
 
 #Preview {
-    food2()
+    FoodView()
 }
 
