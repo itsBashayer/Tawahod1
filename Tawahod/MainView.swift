@@ -30,7 +30,7 @@ struct MainView: View {
                     }
                     Spacer()
 
-                    Text("أهلاً منى!")
+                    Text("أهلاً !")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }

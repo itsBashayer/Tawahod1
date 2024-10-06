@@ -9,15 +9,15 @@ struct FamliyView: View {
                 Image(systemName: "speaker.wave.2")
                     .font(.title2)
                     .foregroundColor(.black)
+                    .padding(.leading, -170)
                     .rotationEffect(.degrees(180))
-                    .padding(.bottom, 600)
-                    .padding(.leading, 90)
-                Text("العائلة")
+
+                Text("عائلتي")
                     .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 600)
-                    .padding(.leading, -4)
+                    .fontWeight(.semibold)
+                    .padding(.leading, 200)
             }
+            .padding(.bottom, 620.0)
 
             ZStack {
                 Rectangle()  // Background rectangle
