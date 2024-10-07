@@ -18,6 +18,12 @@ struct MainView: View {
         NavigationView {
             VStack (alignment: .leading){
                 HStack(alignment: .bottom) {
+
+                    Text("أهلاً !")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    Spacer()
+
                     NavigationLink(
                         destination: SettingView(selectedAvatar: selectedAvatar)
                     ) {
@@ -28,16 +34,13 @@ struct MainView: View {
                             .background(Color.lightYellow)
                             .cornerRadius(50)
                     }
-                    Spacer()
-
-                    Text("أهلاً !")
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                   
                 }
 
                 HStack {
+                    TextField("ابحث...", text: $searchText).multilineTextAlignment(.leading)
+
                     Image(systemName: "magnifyingglass")
-                    TextField("ابحث...", text: $searchText).multilineTextAlignment(.trailing)
                 }
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.lightGrey, lineWidth: 1))
