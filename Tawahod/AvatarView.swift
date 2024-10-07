@@ -62,7 +62,7 @@ struct AvatarView: View {
                 HStack{
                   
                     NavigationLink(destination: MainView(selectedAvatar: localSelectedAvatar)) {
-                        Text("الاستمرار")
+                        Text("التالي")
                             .font(.title3)
                             .frame(maxWidth: .infinity )// Provide a label for the link
                             .padding()
