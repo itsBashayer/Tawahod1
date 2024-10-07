@@ -9,15 +9,15 @@ struct ClothingView: View {
                 Image(systemName: "speaker.wave.2")
                     .font(.title2)
                     .foregroundColor(.black)
+                    .padding(.leading, -170)
                     .rotationEffect(.degrees(180))
-                    .padding(.bottom, 600)
-                    .padding(.leading, 90)
+
                 Text("ملابس")
                     .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 600)
-                    .padding(.leading, -4)
+                    .fontWeight(.semibold)
+                    .padding(.leading, 200)
             }
+            .padding(.bottom, 620.0)
 
             ZStack {
                 Rectangle()  // Background rectangle
@@ -30,15 +30,15 @@ struct ClothingView: View {
                     Spacer().frame(height: 50)  // square Starting
                     HStack(spacing: 30) {
                         SquareBtton(
-                            imageName: "pants", soundName: "Sound",
+                            imageName: "pants", soundName: "pant",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBtton(
-                            imageName: "hat", soundName: "sound2",
+                            imageName: "hat", soundName: "hat",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                     HStack(spacing: 30) {
                         SquareBtton(
-                            imageName: "scarf", soundName: "sc",
+                            imageName: "scarf", soundName: "scarf",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBtton(
                             imageName: "tshirt", soundName: "shirt",
@@ -46,7 +46,7 @@ struct ClothingView: View {
                     }
                     HStack(spacing: 30) {
                         SquareBtton(
-                            imageName: "sweater", soundName: "sound5",
+                            imageName: "sweater", soundName: "Sweater",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBtton(
                             imageName: "shoos", soundName: "shose",

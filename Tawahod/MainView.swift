@@ -4,12 +4,12 @@ import SwiftUI
 struct MainView: View {
     var selectedAvatar: String
     let options = [
-        ("feelings", "المشاعر", "sound1", Color.lightPink),
-        ("hurt", "ماذا يؤلمني", "sound2", Color.lightPurple),
-        ("needs", "ماذا احتاج الان", "sound3", Color.lightGreen),
-        ("food", "الطعام", "sound4", Color.lightYellow),
-        ("clothes", "الملابس", "sound5", Color.lightPurple),
-        ("famliy", "العائلة", "sound6", Color.lightPink),
+        ("feelings", "المشاعر", "feeling", Color.lightPink),
+        ("hurt", "ماذا يؤلمني", "hurt", Color.lightPurple),
+        ("needs", "ماذا احتاج الان", "need", Color.lightGreen),
+        ("food", "الطعام", "food", Color.lightYellow),
+        ("clothes", "الملابس", "cloth", Color.lightPurple),
+        ("famliy", "العائلة", "family", Color.lightPink),
     ]
 
     @State private var searchText = ""
@@ -30,7 +30,7 @@ struct MainView: View {
                     }
                     Spacer()
 
-                    Text("أهلاً منى!")
+                    Text("أهلاً !")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }
@@ -45,7 +45,7 @@ struct MainView: View {
                 LazyVGrid(
                     columns: Array(
                         repeating: GridItem(.flexible()), count: 2),
-                    spacing: 10
+                    spacing: 20
                 ) {
                     ForEach(options, id: \.0) { option in
                         NavigationLink(

@@ -13,8 +13,8 @@ struct FeelingsView: View {
 
                 Text("ماذا أشعر الآن")
                     .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding(.leading, 100)
+                    .fontWeight(.semibold)
+                    .padding(.leading, 130)
             }
             .padding(.bottom, 620.0)
 
@@ -37,7 +37,7 @@ struct FeelingsView: View {
                     }
                     HStack(spacing: 30) {
                         FSquareButton(
-                            imageName: "ImageF3", soundName: "soundF3",
+                            imageName: "ImageF3", soundName: "sec",
                             cornerRadius: 10, width: 150, height: 150)
                         FSquareButton(
                             imageName: "ImageF4", soundName: "cr",
@@ -45,10 +45,10 @@ struct FeelingsView: View {
                     }
                     HStack(spacing: 30) {
                         FSquareButton(
-                            imageName: "ImageF7", soundName: "soundF5",
+                            imageName: "ImageF7", soundName: "comfortable",
                             cornerRadius: 10, width: 150, height: 150)
                         FSquareButton(
-                            imageName: "ImageF6", soundName: "ho",
+                            imageName: "ImageF6", soundName: "angry",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                 }
