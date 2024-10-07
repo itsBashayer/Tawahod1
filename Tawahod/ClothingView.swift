@@ -33,7 +33,7 @@ struct ClothingView: View {
                             imageName: "pants", soundName: "pant",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBtton(
-                            imageName: "hat", soundName: "hat",
+                            imageName: "hat", soundName: "hat2",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                     HStack(spacing: 30) {

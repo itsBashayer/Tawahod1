@@ -21,9 +21,9 @@ struct AvatarView: View {
         ("avatar8", Color.lightPurple),
         ("avatar1", Color.lightGreen),
     ]
-
+    
     @State private var localSelectedAvatar: String = "avatar3"
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -35,13 +35,13 @@ struct AvatarView: View {
                         .scaledToFit()  // Maintain aspect ratio
                         .frame(width: 120, height: 120)
                 }
-
+                
                 Text("اختر شخصيتك!")
                     .foregroundColor(Color.darkGrey)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
-
+                
                 ScrollView {
                     LazyVGrid(
                         columns: [GridItem(.adaptive(minimum: 90))], spacing: 10
@@ -59,35 +59,40 @@ struct AvatarView: View {
                     }
                     .padding(30)
                 }
-
-                NavigationLink(destination: MainView(selectedAvatar: localSelectedAvatar)) {
-                    Text("Continue")  // Provide a label for the link
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                HStack{
+                  
+                    NavigationLink(destination: MainView(selectedAvatar: localSelectedAvatar)) {
+                        Text("الاستمرار")
+                            .font(.title3)
+                            .frame(maxWidth: .infinity )// Provide a label for the link
+                            .padding()
+                            .background(Color.pink.opacity(0.1))
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                        
+                    }
+                    .padding(20)  // Optional: Add some padding above the link
+                 
                 }
-                .padding(.top)  // Optional: Add some padding above the link
+                .padding(.top, 20)
             }
-            .padding(.top, 20)
         }
     }
-}
-
-struct AvatarFrame: View {
-    var avatarImg: String
-    var frameColor: Color
-
-    var body: some View {
-        ZStack {
-            Circle().foregroundColor(frameColor)
-                .frame(width: 100, height: 100)
-            Image(avatarImg).resizable()
-                .scaledToFit()  // Maintain aspect ratio
-                .frame(width: 80, height: 80)
+    
+    struct AvatarFrame: View {
+        var avatarImg: String
+        var frameColor: Color
+        
+        var body: some View {
+            ZStack {
+                Circle().foregroundColor(frameColor)
+                    .frame(width: 100, height: 100)
+                Image(avatarImg).resizable()
+                    .scaledToFit()  // Maintain aspect ratio
+                    .frame(width: 80, height: 80)
+            }
         }
-    }
-}
+    }}
 
 #Preview {
     AvatarView()

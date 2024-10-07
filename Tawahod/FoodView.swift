@@ -47,7 +47,7 @@ struct FoodView: View {
                             imageName: "Food3", soundName: "coki",
                             cornerRadius: 10, width: 150, height: 150)
                         SquareBtton(
-                            imageName: "Food4", soundName: "",
+                            imageName: "Food4", soundName: "salmon",
                             cornerRadius: 10, width: 150, height: 150)
                     }
                     HStack(spacing: 30) {
