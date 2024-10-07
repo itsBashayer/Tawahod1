@@ -187,11 +187,12 @@
 				};
 			};
 			buildConfigurationList = F986F72A2CA85008000532BB /* Build configuration list for PBXProject "Tawahod" */;
-			developmentRegion = en;
+			developmentRegion = ar;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = F986F7262CA85008000532BB;
 			minimizedProjectReferenceProxies = 1;

@@ -1,53 +1,67 @@
+
 //
-//  firstpage.swift
-//  Tawahod
+//  SplashView.swift
+//  RTK_Spike
 //
-//  Created by Razan on 03/04/1446 AH.
+//  Created by Jason Cheladyn on 2022/04/04.
 //
 
 import SwiftUI
 
 struct firstpage: View {
-    @State private var scale: CGFloat = 0.5
-    @State private var logoOpacity: Double = 0
-    @State private var showText = false
+    @State private var isActive: Bool = false
+    @State private var showText: Bool = false
 
     var body: some View {
-        VStack {
-            Image("appIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .scaleEffect(scale)
-                .opacity(logoOpacity)
-                .onAppear {
-                    withAnimation(.easeIn(duration: 1)) {
-                        scale = 1.2
-                        logoOpacity = 1
-                    }
-                    withAnimation(.easeOut(duration: 1).delay(1)) {
-                        scale = 1
-                      //  MainView(selectedAvatar: "")
-                    }
-                    // Delay for showing the text
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation {
-                            showText = true
-                        }
+        ZStack {
+            if isActive {
+                AvatarView() // الانتقال إلى AvatarView
+            } else {
+                Color.white // الخلفية البيضاء
+                    .edgesIgnoringSafeArea(.all) // لتغطية الشاشة بالكامل
+                
+                VStack {
+                    Image("appIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                        .opacity(showText ? 0 : 1) // جعل الشعار شفافاً عند ظهور النص
+                    
+                    if showText {
+                        Text("تواحد")
+                            .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/) // إضافة كلمة "تواحد"
+                            .fontWeight(.heavy)
+                            .transition(.opacity)
+                            .opacity(showText ? 2 : 1)
+                            .padding(.top, 20) // إضافة مسافة فوق النص
                     }
                 }
-            
-            if showText {
-                Text("تواحد")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .transition(.opacity)
-                    .opacity(showText ? 1 : 0)
             }
         }
-        .padding()
+        .onAppear {
+            // عرض الشعار أولاً
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showText = true // إظهار الكلمة بعد 2.5 ثانية
+                }
+            }
+            
+            // الانتقال إلى AvatarView بعد فترة
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                withAnimation {
+                    isActive = true // الانتقال إلى AvatarView بعد 4 ثوان
+                }
+            }
+        }
     }
 }
+
+struct firstpage_Previews: PreviewProvider {
+    static var previews: some View {
+        firstpage() // عرض صفحة الشعار في المعاينة
+    }
+}
+
 #Preview {
     firstpage()
 }

@@ -4,7 +4,7 @@ import SwiftUI
 struct TawahodApp: App {
     var body: some Scene {
         WindowGroup {
-            AvatarView()
+            LaunchScreen()
         }
     }
 }
