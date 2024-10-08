@@ -64,14 +64,14 @@ struct AvatarView: View {
                     NavigationLink(destination: MainView(selectedAvatar: localSelectedAvatar)) {
                         Text("التالي")
                             .font(.title3)
-                            .frame(maxWidth: .infinity )// Provide a label for the link
+                            .frame(maxWidth: 100, maxHeight:30)// Provide a label for the link
                             .padding()
                             .background(Color.pink.opacity(0.1))
                             .foregroundColor(.black)
-                            .cornerRadius(10)
+                            .cornerRadius(30)
                         
                     }
-                    .padding(20)  // Optional: Add some padding above the link
+                    .padding(0)  // Optional: Add some padding above the link
                  
                 }
                 .padding(.top, 20)

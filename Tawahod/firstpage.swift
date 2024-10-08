@@ -1,11 +1,3 @@
-
-//
-//  SplashView.swift
-//  RTK_Spike
-//
-//  Created by Jason Cheladyn on 2022/04/04.
-//
-
 import SwiftUI
 
 struct firstpage: View {

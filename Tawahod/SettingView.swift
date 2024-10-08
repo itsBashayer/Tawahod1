@@ -2,54 +2,52 @@ import SwiftUI
 
 struct SettingView: View {
     var selectedAvatar: String
-    
+
     var body: some View {
         ZStack {
             Color.purple.opacity(0.1)
                 .edgesIgnoringSafeArea(.all)
 
-            HStack {
-                VStack {
-                    HStack(spacing: -50) {
-                        Text("مرحبًا!")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity)
-                            .cornerRadius(20)
+            VStack {
+                HStack {
+                    Text("مرحبًا!")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .cornerRadius(20)
+                    Spacer()
+                    Image(selectedAvatar).resizable().frame(
+                        width: 70, height: 70)  // Replace "Image" with your actual image name
+                }.padding(.horizontal, 30)
 
-                        Image(selectedAvatar).resizable().frame(width: 70, height: 70) // Replace "Image" with your actual image name
-                    }
-                    .padding(5)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 90)
+                        .frame(width: 400.0, height: 650.0)
+                        .foregroundColor(.white)
+                        .padding(.bottom, -140)
 
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 90)
-                            .frame(width: 400.0, height: 650.0)
-                            .foregroundColor(.white)
-                            .padding(.bottom, -140)
+                    VStack(spacing: 20) {
+                        MenuTabs(
+                            menuText: "تعديل الحساب",
+                            menuIcon: "person.fill",
+                            menuColor: .purple.opacity(0.1)
+                        )
 
-                        VStack(spacing: 20) {
-                            MenuTabs(
-                                menuText: "تعديل الحساب",
-                                menuIcon: "person.fill",
-                                menuColor: .purple.opacity(0.1)
-                            )
+                        MenuTabs(
+                            menuText: "الإعدادات",
+                            menuIcon: "gear.badge.questionmark",
+                            menuColor: .yellow.opacity(0.1)
+                        )
 
-                            MenuTabs(
-                                menuText: "الإعدادات",
-                                menuIcon: "gear.badge.questionmark",
-                                menuColor: .yellow.opacity(0.1)
-                            )
-
-                            MenuTabs(
-                                menuText: "مركز المساعدة",
-                                menuIcon: "bubble.left.and.text.bubble.right",
-                                menuColor: .pink.opacity(0.1)
-                            )
-                        }
+                        MenuTabs(
+                            menuText: "مركز المساعدة",
+                            menuIcon: "bubble.left.and.text.bubble.right",
+                            menuColor: .pink.opacity(0.1)
+                        )
                     }
                 }
             }
         }
+
     }
 }
 
@@ -63,18 +61,16 @@ struct MenuTabs: View {
             // Action for button
         }) {
             HStack {
-                Text(menuText)
-                    .padding(.leading, 100)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.trailing)
-                    .padding(.horizontal, 5.0)
-                    .padding(.vertical, 16.0)
-
                 Image(systemName: menuIcon)
                     .foregroundColor(.black)
-                    .padding(.horizontal)
+                Text(menuText)
+                    .padding(.trailing, 100)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(20)
         }
         .frame(maxWidth: .infinity)
         .background(menuColor)

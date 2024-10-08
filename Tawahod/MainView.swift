@@ -48,7 +48,7 @@ struct MainView: View {
                 LazyVGrid(
                     columns: Array(
                         repeating: GridItem(.flexible()), count: 2),
-                    spacing: 20
+                    spacing: 30
                 ) {
                     ForEach(options, id: \.0) { option in
                         NavigationLink(
