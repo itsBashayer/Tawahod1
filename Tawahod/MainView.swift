@@ -44,15 +44,17 @@ struct MainView: View {
                 }
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.lightGrey, lineWidth: 1))
-
+                .padding(.top, 10)
                 LazyVGrid(
                     columns: Array(
                         repeating: GridItem(.flexible()), count: 2),
                     spacing: 30
                 ) {
+                    
                     ForEach(options, id: \.0) { option in
                         NavigationLink(
                             destination: destinationView(for: option.0)
+                            
                         ) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
