@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ClothingView: View {
     let clothingItems = [
-        ("pants", "pant"),
+        ("pant", "pants"),
         ("hat", "hat2"),
         ("scarf", "scarf"),
         ("tshirt", "shirt"),
