@@ -1,96 +1,53 @@
-//
-//  food2.swift
-//  Tawahod
-//
-//  Created by Razan on 03/04/1446 AH.
-//
-import AVFoundation
 import SwiftUI
 
 struct FoodView: View {
+    let foodItems = [
+        ("Food1", "rice1"),
+        ("Food2", "eg"),
+        ("Food3", "coki"),
+        ("Food4", "salmon"),
+        ("Food5", "salad"),
+        ("Food6", "pizza"),
+    ]
+
     var body: some View {
-
-        ZStack {
+        VStack {
             HStack {
-                Image(systemName: "speaker.wave.2")
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .padding(.leading, -170)
-                    .rotationEffect(.degrees(180))
-
                 Text("الطعام")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                    .padding(.leading, 200)
+                Spacer()
+                Image(systemName: "speaker.wave.2")
+                    .font(.title2)
+                    .foregroundColor(.black)
             }
-            .padding(.bottom, 620.0)
+            .padding(.horizontal, 40)
 
             ZStack {
-                Rectangle()  // Background rectangle
-                    .fill(Color(red: 1.002, green: 0.898, blue: 0.9))
-                    .frame(width: 450, height: 690)
-                    .cornerRadius(100)
-                    .padding(.top, 150)
+                Rectangle()
+                    .fill(Color.lightYellow)
+                    .cornerRadius(60)
 
                 VStack(spacing: 20) {
-                    Spacer().frame(height: 50)  // square Starting
-                    HStack(spacing: 30) {
-                        SquareBttong(
-                            imageName: "Food1", soundName: "rice1",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBttong(
-                            imageName: "Food2", soundName: "eg",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-                    HStack(spacing: 30) {
-                        SquareBttong(
-                            imageName: "Food3", soundName: "coki",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBtton(
-                            imageName: "Food4", soundName: "salmon",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-                    HStack(spacing: 30) {
-                        SquareBttong(
-                            imageName: "Food5", soundName: "salad",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBttong(
-                            imageName: "Food6", soundName: "pizza",
-                            cornerRadius: 10, width: 150, height: 150)
+                    ForEach(0..<foodItems.count / 2, id: \.self) { rowIndex in
+                        HStack(spacing: 20) {
+                            SquareButton(
+                                imageName: foodItems[rowIndex * 2].0,
+                                soundName: foodItems[rowIndex * 2].1)
+                            SquareButton(
+                                imageName: foodItems[rowIndex * 2 + 1].0,
+                                soundName: foodItems[rowIndex * 2 + 1].1)
+                        }
                     }
                 }
                 .padding()
             }
+            .edgesIgnoringSafeArea(.all)
         }
-
+        .edgesIgnoringSafeArea(.all)
+        .padding(.top, 100)
     }
 }
-
-struct SquareBttong: View {
-    var imageName: String
-    var soundName: String
-    var cornerRadius: CGFloat
-    var width: CGFloat
-    var height: CGFloat
-
-    @State private var audioPlayer: AVAudioPlayer?
-
-    var body: some View {
-        Button(action: {
-            playSound(soundName: soundName)
-        }) {
-            Image(imageName)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: height)
-                .background(Color.white)
-                .cornerRadius(cornerRadius)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-        }
-    }
-
-}
-
 #Preview {
     FoodView()
 }
-

@@ -1,87 +1,53 @@
-//  Created by BASHAER ALFEHAID on 26/09/2024.
-
 import AVFoundation
 import SwiftUI
 
 struct NeedsView: View {
-    var body: some View {
+    let needsItems = [
+        ("Image1", "sleep"),
+        ("image2", "shower"),
+        ("image3", "bathroom"),
+        ("image4", "hug"),
+        ("image5", "play"),
+        ("image6", "out"),
+    ]
 
-        ZStack {
+    var body: some View {
+        VStack {
             HStack {
+                Text("ماذا أشعر الآن")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                Spacer()
                 Image(systemName: "speaker.wave.2")
                     .font(.title2)
                     .foregroundColor(.black)
-                    .padding(.leading, -100)
-                    .rotationEffect(.degrees(180))
-
-                Text("ماذا أحتاج الآن")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 130)
             }
-            .padding(.bottom, 620.0)
+            .padding(.horizontal, 40)
 
             ZStack {
-                Rectangle()  // Background rectangle
-                    .fill(Color(red: 0.963, green: 0.953, blue: 0.996))
-                    .frame(width: 450, height: 690)
-                    .cornerRadius(100)
-                    .padding(.top, 150)
+                Rectangle()
+                    .fill(Color.lightGreen)
+                    .cornerRadius(60)
 
                 VStack(spacing: 20) {
-                    Spacer().frame(height: 50)  // square Starting
-                    HStack(spacing: 30) {
-                        SquareButton(
-                            imageName: "Image1", soundName: "sleep",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareButton(
-                            imageName: "image2", soundName: "shower",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-                    HStack(spacing: 30) {
-                        SquareButton(
-                            imageName: "image3", soundName: "bathroom",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareButton(
-                            imageName: "image4", soundName: "hug",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-                    HStack(spacing: 30) {
-                        SquareButton(
-                            imageName: "image5", soundName: "play",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareButton(
-                            imageName: "image6", soundName: "out",
-                            cornerRadius: 10, width: 150, height: 150)
+                    ForEach(0..<needsItems.count / 2, id: \.self) {
+                        rowIndex in
+                        HStack(spacing: 20) {
+                            SquareButton(
+                                imageName: needsItems[rowIndex * 2].0,
+                                soundName: needsItems[rowIndex * 2].1)
+                            SquareButton(
+                                imageName: needsItems[rowIndex * 2 + 1].0,
+                                soundName: needsItems[rowIndex * 2 + 1].1)
+                        }
                     }
                 }
                 .padding()
             }
+            .edgesIgnoringSafeArea(.all)
         }
-
-    }
-}
-
-struct SquareButton: View {
-    var imageName: String
-    var soundName: String
-    var cornerRadius: CGFloat
-    var width: CGFloat
-    var height: CGFloat
-
-    @State private var audioPlayer: AVAudioPlayer?
-
-    var body: some View {
-        Button(action: {
-            playSound(soundName: soundName)
-        }) {
-            Image(imageName)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: height)
-                .background(Color.white)
-                .cornerRadius(cornerRadius)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-        }
+        .edgesIgnoringSafeArea(.all)
+        .padding(.top, 50)
     }
 }
 

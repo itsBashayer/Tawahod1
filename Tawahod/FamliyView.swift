@@ -2,88 +2,51 @@ import AVFoundation
 import SwiftUI
 
 struct FamliyView: View {
+    let familyItems = [
+        ("father", "Dad"),
+        ("mother", "mother"),
+        ("brother", "brother"),
+        ("sister", "sis"),
+        ("grandmother", "grandmother"),
+        ("grandfather", "grandfather"),
+    ]
+
     var body: some View {
-
-        ZStack {
+        VStack {
             HStack {
-                Image(systemName: "speaker.wave.2")
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .padding(.leading, -170)
-                    .rotationEffect(.degrees(180))
-
                 Text("عائلتي")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                    .padding(.leading, 200)
+                Spacer()
+                Image(systemName: "speaker.wave.2")
+                    .font(.title2)
+                    .foregroundColor(.black)
             }
-            .padding(.bottom, 620.0)
+            .padding(.horizontal, 40)
 
             ZStack {
-                Rectangle()  // Background rectangle
-                    .fill(Color(red: 0.963, green: 0.953, blue: 0.996))
-                    .frame(width: 450, height: 690)
-                    .cornerRadius(100)
-                    .padding(.top, 150)
+                Rectangle()
+                    .fill(Color.lightPink)
+                    .cornerRadius(60)
 
                 VStack(spacing: 20) {
-                    Spacer().frame(height: 50)  // square Starting
-                    HStack(spacing: 30) {
-                        SquareBttonf(
-                            imageName: "father", soundName: "Dad",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBttonf(
-                            imageName: "mother", soundName: "mother",
-                            cornerRadius: 10, width: 150, height: 150)
+                    ForEach(0..<familyItems.count / 2, id: \.self) { rowIndex in
+                        HStack(spacing: 20) {
+                            SquareButton(
+                                imageName: familyItems[rowIndex * 2].0,
+                                soundName: familyItems[rowIndex * 2].1)
+                            SquareButton(
+                                imageName: familyItems[rowIndex * 2 + 1].0,
+                                soundName: familyItems[rowIndex * 2 + 1].1)
+                        }
                     }
-                    HStack(spacing: 30) {
-                        SquareBttonf(
-                            imageName: "brother", soundName: "brother",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBttonf(
-                            imageName: "sister", soundName: "sis",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-                    HStack(spacing: 30) {
-                        SquareBttonf(
-                            imageName: "grandmother", soundName: "grandmother",
-                            cornerRadius: 10, width: 150, height: 150)
-                        SquareBttonf(
-                            imageName: "grandfather", soundName: "grandfather",
-                            cornerRadius: 10, width: 150, height: 150)
-                    }
-
                 }
                 .padding()
             }
+            .edgesIgnoringSafeArea(.all)
         }
-
-    }
-}
-
-struct SquareBttonf: View {
-    var imageName: String
-    var soundName: String
-    var cornerRadius: CGFloat
-    var width: CGFloat
-    var height: CGFloat
-
-    @State private var audioPlayer: AVAudioPlayer?
-
-    var body: some View {
-        Button(action: {
-            playSound(soundName: soundName)
-        }) {
-            Image(imageName)
-
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                //.spectRatio(contentMode: .fill)
-                .frame(width: width, height: height)
-                .background(Color.white)
-                .cornerRadius(cornerRadius)
-                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-        }
+        .edgesIgnoringSafeArea(.all)
+        .padding(.top, 50)
     }
 }
 
