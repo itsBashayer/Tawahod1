@@ -2,15 +2,16 @@ import AVFoundation
 import SwiftUI
 
 struct ClothingView: View {
+    let clothingItems = [
+        ("pants", "pant"),
+        ("hat", "hat2"),
+        ("scarf", "scarf"),
+        ("tshirt", "shirt"),
+        ("sweater", "Sweater"),
+        ("shoos", "shose"),
+    ]
     var body: some View {
-        let clothingItems = [
-            ("pants", "pant"),
-            ("hat", "hat2"),
-            ("scarf", "scarf"),
-            ("tshirt", "shirt"),
-            ("sweater", "Sweater"),
-            ("shoos", "shose"),
-        ]
+        
 
         VStack {
             HStack {
