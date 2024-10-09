@@ -14,7 +14,7 @@ struct NeedsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("ماذا أشعر الآن")
+                Text("ماذا أحتاج الآن")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                 Spacer()
